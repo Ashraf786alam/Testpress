@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback</title>
+  </head>
+  <body>
+    <a href="/exam/logout/" style="margin-left:1250px;font-size:25px;color:black">Logout</a>
+    <div id="div" style="width:1200px; margin-left:60px;height:600px;background-color:lvory">
+    <center><h2 style="color:black"> Hello {{name}} </h2></center>
+      <h3 style="color:lightblue">Hint: Click Any subject to Take the Test</h3>
+     <div id="subject" style="margin-left:100px;width:1000px; height:400px; border:1px solid gray;border-radius:10px;margin-top:50px">
+    <table>
+      <tr>
+   <td><div id="math" style="width:120px; margin-top:80px;height:35px;margin-left:100px;background-color:lightcyan;border:1px solid cyan">
+      <center><a href="/exam/test?subject=math" style="color:black;font-size:25px">Math</a></center>
+    </div>
+  </td>
+  <td>
+    <div id="english" style="width:120px;height:35px;margin-top:80px;margin-left:170px;background-color:lightcyan;border:1px solid cyan">
+      <center><a href="/exam/test?subject=english" style="color:black;font-size:25px">English</a></center>
+    </div>
+  </td>
+
+  <td>
+    <div id="physics" style="width:120px;height:35px;margin-top:80px;margin-left:220px;background-color:lightcyan;border:1px solid cyan">
+      <center><a href="/exam/test?subject=physics" style="color:black;font-size:25px">Physics</a></center>
+    </div>
+  </td>
+</tr>
+<br><br>
+<tr>
+<td><div id="chemistry" style="width:120px; margin-top:120px;height:35px;margin-left:100px;background-color:lightcyan;border:1px solid cyan">
+<center><a href="/exam/test?subject=chemistry" style="color:black;font-size:25px">Chemistry</a></center>
+</div>
+</td>
+<td>
+<div id="biology" style="width:120px;height:35px;margin-top:120px;margin-left:170px;background-color:lightcyan;border:1px solid cyan">
+<center><a href="/exam/test?subject=biology" style="color:black;font-size:25px">Biology</a></center>
+</div>
+</td>
+
+<td>
+<div id="socialscience" style="width:120px;height:35px;margin-top:120px;margin-left:220px;background-color:lightcyan;border:1px solid cyan">
+<center><a href="/exam/test?subject=social-science" style="color:black;font-size:25px">Social</a></center>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+
+  </body>
+</html>
