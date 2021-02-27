@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SIGNUP FORM</title>
+    <style>
+     .success{
+       color:red;
+     }
+     .errors{
+       color:blue;
+     }
+    </style>
+  </head>
+  <body style="background-color:white">
+    <center>
+      <a href="/exam/login" style="margin-left:1270px;font-size:25px">Login</a>
+    <h2 style="text-decoration:underline;color:Black">REGISTRATION FORM</h2>
+    <form style="border:1px solid cyan; width:600px;height:300px;padding-top:20px" action="" method="post">
+      {%csrf_token%}
+      {% for f in fm%}
+      {{f.label_tag}} {{f}} <span class="errors" >{{f.errors|striptags}}</span><br><br>
+      {% endfor %}
+      <input type="submit" value="Submit" style="width:200px;background-color:white;color:black;height:35px;font-size:18px">
+    </form>
+    {% if messages %}
+    {% for message in messages %}
+    <h3 {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</h3>
+    {% endfor %}
+    {% endif %}
+    </center>
+    {{d}}
+  </body>
+</html>
