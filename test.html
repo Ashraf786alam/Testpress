@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+{% load IDS %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <h2 style="margin-left:1110px">Time: {{10|get_date}}</h2>
+  <title>Test</title>
+  <link rel="stylesheet" href="{%static 'css/teststyle.css' %}">
+  </head>
+<body>
+  <center>
+  <div class="heading">
+  <h1>WELCOME</h2>
+  </div>
+</center>
+
+{%if count %}
+<h2 style="color:red">Q:No {{count}}</h2>
+{%if Rem %}
+<h2 style="margin-left:640px;color:red">Remaining Q: {{Rem}}</h2>
+{% endif %}
+{% endif %}
+  <form action=""  method="post">
+    {%csrf_token%}
+    <div class="questionblock">
+      <div class="que">
+      <h3>{{que}}</h3>
+    {% if level %}
+<h5>Level:{{level}}</h5>
+    {% else %}
+    level not defined
+    {% endif %}
+  </div>
+  <div class="options">
+    <input type="radio" value={{a}} name="answer"><span>{{a}}</span>
+  </div>
+  <div class="options">
+    <input type="radio" value={{b}} name="answer"><span>{{b}}</span>
+  </div>
+  <div class="options">
+    <input type="radio" value={{c}} name="answer"><span>{{c}}</span>
+  </div>
+  <div class="options">
+    <input type="radio" value={{d}} name="answer"><span>{{d}}</span>
+  </div>
+  <div class="submit" style="width:80px;height:25px">
+  <input type="submit" value="Submit" style="font-size:15px">
+</div>
+</div>
+</form>
+{% if Exist %}
+<table>
+<tr>
+{% if ans|check_answer:correct_answer %}
+<td><h2>Your answer, <b style="color:green">{{correct_answer}}</b>  is Right.</h2></td>
+{% else %}
+<td><h2>Your answer, <b style="color:red">{{ans}}</b> is Wrong.</h2></td>
+<td><h2 style="margin-left:210px">Right answer is :  <b style="color:green">{{correct_answer}}.</b></h2></td>
+{% endif %}
+</tr>
+
+</table>
+{% endif %}
+<script src="{% static 'js/jquery.js' %}"></script>
+  {% include "exam/preventback.html" %}
+
+
+
+
+
+</body>
+  </html>
