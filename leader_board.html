@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body style="background-color:white">
+    <a href="/exam/logout/" style="margin-left:1250px;font-size:30px;color:red">Logout</a>
+    <center><h2 style="color:black;margin-top:-10px">This is LeaderBoard Page</h2></center>
+    <div style="width:970px; height:150px;border:1px solid cyan;border-radius:10px;margin-left:230px">
+    <center>
+     <form action="" method="post">
+     {%csrf_token%}
+       <input type="text" style="margin-top:10px;width:370px;height:18px;padding:5px;padding-left:10px; font-size:17px; border:1px solid black" name="top" placeholder="Username"></input>
+       <input type="submit" value="SEARCH" style="height:30px;width:100px;background-color:white;border:1px solid gray;font-size:18px;background-color:lightpink">
+     </form>
+   </center>
+   {% if msg %}
+  <center><h3 style="color:black">{{msg}}</h3></center>
+   {% endif %}
+    {%if record%}
+     <table>
+       <br>
+     <thead>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:2px">Rank</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Name</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Math</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">English</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Physics</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Chemistry</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Biology</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Social</div></th>
+       <th><div style="width:100px;height:25px; border:1px solid gray;margin-left:-2px">Total</div></th>
+     </thead>
+     <tr></tr>
+     <tr></tr>
+     <tr></tr>
+     <tr>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{rank}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.name}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.math}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.english}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.physics}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.chemistry}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.biology}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.social}}</center></div></td>
+    <td><div style="width:100px;height:25px;border:1px solid lightgray;margin-left:2px;font-size:20px"><center>{{record.total}}</center></div></td>
+     </tr>
+     </table>
+     {% endif %}
+    </div>
+
+  <table style="border:1px solid blue;margin-left:100px;margin-top:50px;position:fixed">
+   <thead>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:2px;"><i>Name</i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Math</i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>English</i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Physics<i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Chemistry<i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Biology</i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Social</i></div></th>
+    <th><div style="height:30px; width:100px;border:1px solid lightgreen;font-size:20px;padding-left:5px;margin-left:15px"><i>Total</i></div></th>
+    </thead>
+    {% for l in leader %}
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:2px"><center><i>{{l.name}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.math}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.english}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.physics}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.chemistry}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.biology}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.social}}</i></center></div></td>
+    <td><div style="height:30px;width:100px;border:1px solid gray;font-size:20px;margin-left:15px"><center><i>{{l.total}}</i></center></div></td>
+     </tr>
+     {% endfor %}
+   </table>
+    <table style="margin-left:1100px;margin-top:50px;border:1px solid blue">
+      <thead>
+     <th><div style="height:30px;width:100px;border:1px solid cyan;font-size:20px"><center><i>Rank</i></center></div></th>
+      </thead>
+      {% for l in size %}
+    </tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr></tr>
+    <tr>
+  <td><div style="height:30px; width:100px;border:1px solid cyan;font-size:20px"><center><i>{{l}}</i></center></div></td>
+    {% endfor %}
+  </table>
+  </body>
+</html>
