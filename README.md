@@ -8,8 +8,10 @@ ii. There is a user signup and login page. User can’t access any page without 
 
 iii. There are six subjects, Math, Physics, Chemistry, English, Biology, Social. User can select any subject and take the test on that particular subject.
 
-iv. Marks obtained by user stored in the database.
+iv.Once You select a question you cant go to the previous question.
 
-v. User can see its all subjects marks in his profile page.
+v. Marks obtained by user stored in the database.
 
-vi. A Leader-board is used to hold the rank of the user on the basis of all subjects marks.
+vi. User can see its all subjects marks in his profile page.
+
+vii. A Leader-board is used to hold the rank of the user on the basis of all subjects marks.
