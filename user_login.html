@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>LOGIN PAGE</title>
+  </head>
+  <body style="background-color:white">
+    <table>
+      <tr>
+      <td><a href="/exam/changePass/" style="color:black;font-size:20px;margin-left:1110px">Change Password</a></td>
+      <td><a href="/exam/signup/" style="color:black;font-size:20px;margin-left:20px">SignUp</a></td>
+    </tr>
+    </table>
+    <center>
+    <h2 style="color:black">LOGIN WINDOW</h2>
+    <form style="border:1px solid blue;width:600px;height:300px;padding-top:30px;border-radius:10px" action="" method="post">
+      {%csrf_token%}
+      <table>
+        <tr><div style="height:30px;width:200px"></div></tr>
+        <tr>
+          <td><label for="Username" style="font-size:22px;color:gray">Username</label></td>
+          <td><input type="text" id="username" name="username" style="height:25px; width:250px;border:1px solid gray;padding-left:10px"></td>
+       </tr>
+       <tr>
+         <tr></tr>
+       <td><label for="Password" style="font-size:22px;color:gray">Password</label></td>
+       <td><input type="password" id="password" name="password" style="height:25px;width:250px;border:1px solid gray;padding-left:10px"></td>
+     </tr>
+     <tr></tr>
+     <tr>
+       <td><label for="Standerd" style="font-size:22px;color:gray">Standerd</label></td>
+       <td><input type="number" name="number" placeholder="Must be 10" style="height:25px;width:242px;padding-left:10px"></td>
+    </tr>
+    <tr></tr>
+    <tr></tr>
+     <tr>
+       <td></td>
+       <td><input type="submit" value="Login" style="width:100px;height:30px;border:1px solid gray;font-size:17px;margin-left:80px"></td>
+    </tr>
+    </table>
+      </form>
+      {% if data %}
+       <h3 style="color:red">{{data}}</h3>
+       {% endif %}
+
+       {% if data1 %}
+        <h3 style="color:red">{{data1}}</h3>
+        {% endif %}
+</center>
+<script src="{% static 'js/jquery.js' %}"></script>
+  {% include "exam/preventback.html" %}
+  <center>
+ <h2>Use username= ashraf123 and Password= python123 For Login</h2>
+ <h3>OR</h3>
+ <h2>Create Your Own Account</h2>
+</center>
+  </body>
+</html>
